@@ -21,7 +21,6 @@ export function WinningLogic(gameStates) {
       dataO.push(index);
     }
   });
-  console.log("val", dataX, dataO);
 
   winMatrix.forEach((item) => {
     const resultX = item.every((el) => dataX.includes(el));
