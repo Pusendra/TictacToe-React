@@ -34,7 +34,13 @@ export default class Board extends Component {
     WinningLogic(this.state.gameStates);
     return (
       <div>
-        <h1 id="result">{status ? status : `Turn of ${this.state.current}`}</h1>
+        <h1 id="result">
+          {status
+            ? status
+            : this.state.gameStates.every((item) => item != null)
+            ? "game over!!!"
+            : `Turn of ${this.state.current}`}
+        </h1>
         <section>
           <Square
             onClick={() => {
