@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Square from "./Square";
 import { WinningLogic, status, handleRes } from "./Helper";
 
-export default class Game1 extends Component {
+export default class Board extends Component {
   state = {
     gameStates: Array(9).fill(null),
     isNext: true,
@@ -85,7 +85,7 @@ export default class Game1 extends Component {
             status={status}
           />
         </section>
-        <div class="footer">
+        <div className="footer">
           <p>Tic Tac Toe</p>
           <br />
           <button id="btn" onClick={() => this.handleReset()}>
