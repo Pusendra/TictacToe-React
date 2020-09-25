@@ -1,6 +1,6 @@
 export let status = "";
 
-export function WinningLogic(gameStates) {
+export const WinningLogic = (gameStates) => {
   const winMatrix = [
     [0, 1, 2],
     [3, 4, 5],
@@ -9,15 +9,14 @@ export function WinningLogic(gameStates) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6],
+    [2, 4, 6]
   ];
   const dataX = [];
   const dataO = [];
 
-  gameStates.filter((item, index) => {
+  gameStates.forEach((item, index) => {
     if (gameStates[index] === "X") {
       dataX.push(index);
-      return true;
     } else if (gameStates[index] === "O") {
       dataO.push(index);
     }
@@ -32,7 +31,7 @@ export function WinningLogic(gameStates) {
       status = "Winner is O";
     }
   });
-}
-export function handleRes() {
+};
+export const handleRes = () => {
   status = "";
-}
+};

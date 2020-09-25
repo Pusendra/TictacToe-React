@@ -1,12 +1,12 @@
 import React from "react";
 export { status } from "./Helper";
 
-function Square({ onClick, value, status }) {
+function Square({ handleClick, value, status }) {
   return (
     <button
       className="cell"
-      onClick={onClick}
-      disabled={status ? true : value ? true : false}
+      onClick={handleClick}
+      disabled={status || value ? true : false}
     >
       {value}
     </button>
